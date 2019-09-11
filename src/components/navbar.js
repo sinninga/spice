@@ -3,17 +3,21 @@ import { Link } from 'react-router-dom';
 
 
 function Navbar() {
+  const navStyle = {
+    color: 'white'
+  };
+
   return (
     <nav className="navbar">
       <h3>Logo</h3>
       <ul className="nav-links">
-        <Link to="/">
+        <Link style={navStyle} to="/">
           <li>Restaurants</li>
         </Link>
-        <Link to='/recipes'>
+        <Link style={navStyle} to='/recipes'>
           <li>Recipes</li>
         </Link>
-        <Link to='/info'>
+        <Link style={navStyle} to='/info'>
           <li>Info</li>
         </Link>
       </ul>
