@@ -20,8 +20,8 @@
 }
 
 .restaurant-image {
-  max-height: 250px;
-  max-width: 50%;
+  height: 200px;
+  width: 200px;
 }
 
 .card {
