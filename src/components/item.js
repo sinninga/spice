@@ -6,7 +6,7 @@ class Item extends Component {
             <div>
                 <div class="card-container">
                     <a href={this.props.rest.url} className="card-link">
-                        <div className="card">
+                        <div className="card" data-aos="fade-left">
                             <img src={this.props.rest.image_url} alt="" className="restaurant-image"/>
                             <div className="restaurant-content">
                                 <h1>{this.props.rest.name}</h1>

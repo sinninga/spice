@@ -7,7 +7,7 @@ const yelp_key='FPGJ2LPgJpxCoAN1CnIaBMNMqHRUjRXsHFdRjd85XtPcR_cW3iIaC6JVcYmBu7pV
 
 let location = 'taipei';
 let term = "spicy";
-let limit = 6;
+let limit = 7;
 
 const config = {
   headers: {
@@ -57,7 +57,7 @@ class Restaurants extends Component {
     // event.preventDefault()
     axios.get(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${event.target.value}&term=${this.state.term}&limit=${this.state.limit}`, config)
   .then((response) => {
-    console.log(response.data.businesses);
+    // console.log(response.data.businesses);
     this.setState({
       restaurants: response.data.businesses
     })
@@ -77,7 +77,7 @@ class Restaurants extends Component {
     return (
       <div className="content">
         <form onSubmit={this.handleSubmit} className="form">
-          <p><h1 class="search-label">Find the Spicy</h1><input type="text" placeholder='Your Location' onChange={this.handleInputChange}/></p>
+          <p><h1 class="search-label">Find the Spicy</h1><input type="text" placeholder='City, State' onChange={this.handleInputChange}/></p>
         </form>
         <div className="restaurants">
             <div className="restaurants-content">
