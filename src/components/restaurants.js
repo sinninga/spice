@@ -7,7 +7,7 @@ const yelp_key='FPGJ2LPgJpxCoAN1CnIaBMNMqHRUjRXsHFdRjd85XtPcR_cW3iIaC6JVcYmBu7pV
 
 let location = 'taipei';
 let term = "spicy";
-let limit = 2;
+let limit = 6;
 
 const config = {
   headers: {
@@ -76,15 +76,15 @@ class Restaurants extends Component {
   render() {
     return (
       <div className="content">
-        <form onSubmit={this.handleSubmit}>
-          <p><input type="text" placeholder='loveland' onChange={this.handleInputChange}/></p>
+        <form onSubmit={this.handleSubmit} className="form">
+          <p><h1 class="search-label">Find the Spicy</h1><input type="text" placeholder='Your Location' onChange={this.handleInputChange}/></p>
         </form>
         <div className="restaurants">
-            <h2>
+            <div className="restaurants-content">
               {this.state.restaurants.map((rest) => 
                 <Item rest={rest} />
               )}
-            </h2>
+            </div>
         </div>
       </div>
     )

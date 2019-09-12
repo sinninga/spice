@@ -4,14 +4,17 @@ class Item extends Component {
     render() {
         return (
             <div>
-                <div className="card">
-                    <img src={this.props.rest.image_url} alt="" className="restaurant-image"/>
-                    <div className="restaurant-content">
-                        <h1>{this.props.rest.name}</h1>
-                        <h3>{this.props.rest.phone}</h3>
-                        <h3>{this.props.rest.price}</h3>
+                <a href={this.props.rest.url} className="card-link">
+                    <div class="card-container">
+                        <div className="card">
+                            <img src={this.props.rest.image_url} alt="" className="restaurant-image"/>
+                            <div className="restaurant-content">
+                                <h1>{this.props.rest.name}</h1>
+                                <h2>{console.log(this.props.rest.location)}</h2>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                 </a>
             </div>
         );
     }

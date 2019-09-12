@@ -7,7 +7,7 @@
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background: red;
+  background: indianred;
   color: white;
 }
 
@@ -25,12 +25,59 @@
 }
 
 .card {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  width: 80%;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3rem;
+  background: darkseagreen;
+  color: whitesmoke;
+  padding: 30px;
   align-items: center;
-  flex-direction: row;
-  margin: 20px;
-  background-color: beige;
+  border-radius: 4px;
+  box-shadow: 4px 4px lightgrey;
+}
+
+.card:hover {
+  width: 81%;
+  background-color: indianred;
+  cursor: pointer;
+}
+
+.card-container {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  width: 92%;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3rem;
+  /* background: #f1f1f1; */
+  margin-top: 2rem;
+  padding: 30px;
+  align-items: center;
+  text-decoration: none;
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+input[type=text] {
+  font-size: 20px;
+  margin-top: 10px;
+  width: 260px;
+  height: 50px;
+  border: 8px solid darkseagreen;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+input[type=text]:focus {
+  border: 8px solid indianred;
+  border-radius: 2px;
+}
+
+.search-label {
+  color: slategray;
 }
 
 @keyframes App-logo-spin {
