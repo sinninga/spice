@@ -5,7 +5,9 @@ import Item from './item';
 const yelp_key='FPGJ2LPgJpxCoAN1CnIaBMNMqHRUjRXsHFdRjd85XtPcR_cW3iIaC6JVcYmBu7pVcjQBgcusX-pB-oAX7zR1WhR1kXbdGQ3hyOIieEQDJ0MasdBHUXvMxq8Q-KN2XXYx';
 // const url = 'GET https://api.yelp.com/v3/businesses/search';
 
-const location = 'Loveland';
+let location = 'loveland';
+let term = "spicy";
+let limit = 5;
 
 const config = {
   headers: {
@@ -16,22 +18,28 @@ const config = {
     'Access-Control-Allow-Headers':  'Authorization',
     'Authorization': `Bearer ${yelp_key}`,
 },
-  params: {
-    term: 'spicy',
-    location: `${location}`,
-    limit: 10
-  }
+  // params: {
+  //   term: 'spicy',
+  //   location: `${location}`,
+  //   limit: 10
+  // }
 };
 
 class Restaurants extends Component {
   state = {
     restaurants: ['red'],
-    location: location
+    location: location,
+    term: term,
+    limit: limit
   };
+
+  onSubmit(e) {
+    this.setState({ location: e.target.value })
+  }
   
   componentDidMount() {
     console.log(config);
-    const data = axios.get('https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search', config)
+    const data = axios.get(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${this.state.location}&term=${this.state.term}&limit=${this.state.limit}`, config)
     .then(response => this.setState({ restaurants: response.data.businesses}));
     // .then(response => console.log(response.data.businesses[0].name))
     // .then(response => console.log(response.data.businesses));
