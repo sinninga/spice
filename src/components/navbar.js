@@ -9,7 +9,10 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <h3>Logo</h3>
+      <div class="nav-logo">
+        <img className='nav-icon' src="https://cdn4.iconfinder.com/data/icons/filled-vegetables-colored/4096/Chili_pepper_2-512.png" alt=""/>
+        <h3 className='nav-logo-text'>The Hot Tamale</h3>
+      </div>
       <ul className="nav-links">
         <Link style={navStyle} to="/">
           <li>Restaurants</li>

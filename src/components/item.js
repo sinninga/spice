@@ -4,8 +4,8 @@ class Item extends Component {
     render() {
         return (
             <div>
-                <a href={this.props.rest.url} className="card-link">
-                    <div class="card-container">
+                <div class="card-container">
+                    <a href={this.props.rest.url} className="card-link">
                         <div className="card">
                             <img src={this.props.rest.image_url} alt="" className="restaurant-image"/>
                             <div className="restaurant-content">
@@ -13,8 +13,8 @@ class Item extends Component {
                                 <h2>{console.log(this.props.rest.location)}</h2>
                             </div>
                         </div>
-                    </div>
-                 </a>
+                    </a>
+                </div>
             </div>
         );
     }
