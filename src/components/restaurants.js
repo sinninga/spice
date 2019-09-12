@@ -5,6 +5,7 @@ import Item from './item';
 const yelp_key='FPGJ2LPgJpxCoAN1CnIaBMNMqHRUjRXsHFdRjd85XtPcR_cW3iIaC6JVcYmBu7pVcjQBgcusX-pB-oAX7zR1WhR1kXbdGQ3hyOIieEQDJ0MasdBHUXvMxq8Q-KN2XXYx';
 // const url = 'GET https://api.yelp.com/v3/businesses/search';
 
+const location = 'loveland';
 
 const config = {
   headers: {
@@ -17,8 +18,8 @@ const config = {
 },
   params: {
     term: 'spicy',
-    location: 'colorado',
-    limit: 10
+    location: `${location}`,
+    limit: 4
   }
 };
 
@@ -30,7 +31,7 @@ class Restaurants extends Component {
   componentDidMount() {
     console.log(config);
     const data = axios.get('https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search', config)
-    .then(response => this.setState({ restaurants: response.data.businesses}))
+    .then(response => this.setState({ restaurants: response.data.businesses}));
     // .then(response => console.log(response.data.businesses[0].name))
     // .then(response => console.log(response.data.businesses));
     // const results = response.data

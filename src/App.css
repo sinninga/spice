@@ -19,6 +19,20 @@
   list-style: none;
 }
 
+.restaurant-image {
+  max-height: 250px;
+  max-width: 50%;
+}
+
+.card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  margin: 20px;
+  background-color: beige;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
