@@ -6,7 +6,7 @@ const yelp_key='FPGJ2LPgJpxCoAN1CnIaBMNMqHRUjRXsHFdRjd85XtPcR_cW3iIaC6JVcYmBu7pV
 // const url = 'GET https://api.yelp.com/v3/businesses/search';
 
 let location = 'taipei';
-let term = "spicy";
+let term = "tacos";
 let limit = 7;
 
 const config = {
