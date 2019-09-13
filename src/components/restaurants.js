@@ -77,12 +77,12 @@ class Restaurants extends Component {
     return (
       <div className="content">
         <form onSubmit={this.handleSubmit} className="form">
-          <p><h1 class="search-label">Find the Spicy</h1><input type="text" placeholder='City, State' onChange={this.handleInputChange}/></p>
+          <div><h1 className="search-label">Find the Spicy</h1><input type="text" placeholder='City, State' onChange={this.handleInputChange}/></div>
         </form>
         <div className="restaurants">
             <div className="restaurants-content">
-              {this.state.restaurants.map((rest) => 
-                <Item rest={rest} />
+              {this.state.restaurants.map((rest, key) => 
+                <Item rest={rest} key={key} />
               )}
             </div>
         </div>

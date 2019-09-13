@@ -9,6 +9,11 @@
   min-height: 10vh;
   background: indianred;
   color: white;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  opacity: 0.98;
 }
 
 .nav-logo {
@@ -33,41 +38,64 @@
   list-style: none;
 }
 
-.restaurant-image {
-  /* border-radius: 350px; */
-  margin-left: 10%;
-  height: 250px;
-  width: 100%;
-  margin: 0;
-  border-right: 4px solid whitesmoke;
-  box-shadow: 0px 4px lightgrey;
-  border-radius: 5px;
-}
 
 .card {
   display: grid;
   min-width: 400px;
   width: 99%;
   grid-template-columns: 1fr 1.5fr;
-  grid-gap: 3rem;
-  background: darkseagreen;
+  /* grid-gap: 3rem; */
+  /* background: darkseagreen; */
   font-family: 'Rock Salt', cursive;
   font-size: 12px;
-  color: whitesmoke;
+  /* color: whitesmoke; */
   /* padding: 30px; */
-  align-items: center;
+  /* align-items: center; */
   border-radius: 4px;
   box-shadow: 4px 4px lightgrey;
   /* border: 5px solid indianred; */
 }
 
-.card:nth-child(even) img {
-  order: 2;
+.restaurant-content {
+  display: flex;
+  flex-direction: column;
 }
 
-.card:hover {
+.restaurant-image {
+  /* border-radius: 350px; */
+  margin-left: 10%;
+  height: 288px;
+  width: 100%;
+  margin: 0px;;
+  /* border-right: 4px solid whitesmoke; */
+  /* box-shadow: 0px 4px lightgrey; */
+  border-radius: 2px;
+}
+
+.restaurant-title {
+  background: darkseagreen;
+  color: white;
+  width: 100%;
+  height: 50%;
+}
+
+.restaurant-description {
+  color: darkslategray;
+}
+
+.restaurant-phone {
+  font-family: 'Courier New', Courier, monospace
+}
+
+.card:hover .restaurant-title {
   width: 100%;
   background-color: indianred;
+  cursor: pointer;
+}
+
+.card:hover .restaurant-description {
+  width: 100%;
+  color: indianred;
   cursor: pointer;
 }
 
@@ -115,6 +143,34 @@ input[type=text]:focus {
 
 .search-label {
   color: slategray;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  min-height: 65px;;
+  height: auto;
+  background-color: linen;
+  color: rgb(66, 66, 66);
+  font-family: 'Permanent Marker', cursive;
+  opacity: 0.8;
+  margin-top: 50px;
+}
+
+.footer-icon {
+  height: 15px;
+  width: 15px;
+  background-color: linen;
+  border-radius: 50px;
+  margin-left: 10px;
+}
+
+.footer-content {
+  text-align: right;
+  margin-left: 7px;
+  margin-right: 17px;
+  margin-top: 1.5vh;
+  margin-bottom: 7px;
 }
 
 @keyframes App-logo-spin {

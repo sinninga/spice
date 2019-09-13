@@ -4,6 +4,7 @@ import Navbar from './components/navbar';
 import Info from './components/info';
 import Recipes from './components/recipes';
 import Restaurants from './components/restaurants';
+import Footer from './components/footer';
 import 'react-router-dom';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" exact component={Restaurants} />
         <Route path="/recipes" component={Recipes} />
         <Route path="/info" component={Info} />
+        <Footer />
       </div>
     </Router>
       
