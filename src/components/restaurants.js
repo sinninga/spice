@@ -76,7 +76,7 @@ class Restaurants extends Component {
     return (
       <div className="content">
         <form onSubmit={this.handleSubmit} className="form">
-          <div><h1 className="search-label">Find the Spicy</h1><input type="text" placeholder='City, State' onChange={this.handleInputChange}/></div>
+          <div><h1 className="search-label">Find Tacos Near You</h1><input type="text" placeholder='City, State' onChange={this.handleInputChange}/></div>
         </form>
         <div className="restaurants">
             <div className="restaurants-content">
