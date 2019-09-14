@@ -5,7 +5,7 @@ import Item from './item';
 const yelp_key='FPGJ2LPgJpxCoAN1CnIaBMNMqHRUjRXsHFdRjd85XtPcR_cW3iIaC6JVcYmBu7pVcjQBgcusX-pB-oAX7zR1WhR1kXbdGQ3hyOIieEQDJ0MasdBHUXvMxq8Q-KN2XXYx';
 // const url = 'GET https://api.yelp.com/v3/businesses/search';
 
-let location = 'taipei';
+let location = 'loveland';
 let term = "tacos";
 let limit = 7;
 
@@ -32,7 +32,7 @@ class Restaurants extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
 
     this.state = {
-      restaurants: ['red'],
+      restaurants: [],
       location: location,
       term: term,
       limit: limit
@@ -44,7 +44,6 @@ class Restaurants extends Component {
     const url = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${this.state.location}&term=${this.state.term}&limit=${this.state.limit}`;
     const response = await fetch(url, config);
     const data = await response.json();
-    console.log(data.businesses[0])
     this.setState({ restaurants: data.businesses });
     // .then(response => console.log(response.data.businesses[0].name))
     // .then(response => console.log(response.data.businesses));

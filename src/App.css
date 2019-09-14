@@ -42,8 +42,8 @@
 .card {
   display: grid;
   min-width: 400px;
-  width: 99%;
-  grid-template-columns: 1fr 1.5fr;
+  width: 99.5%;
+  grid-template-columns: 1fr 1.8fr;
   /* grid-gap: 3rem; */
   /* background: darkseagreen; */
   font-family: 'Rock Salt', cursive;
@@ -64,7 +64,7 @@
 .restaurant-image {
   /* border-radius: 350px; */
   margin-left: 10%;
-  height: 288px;
+  height: 100%;
   width: 100%;
   margin: 0px;;
   /* border-right: 4px solid whitesmoke; */
@@ -81,10 +81,31 @@
 
 .restaurant-description {
   color: darkslategray;
+  font-family: 'Hind', sans-serif;
+  padding: 20px;
+}
+
+.restaurant-address-container {
+  border-bottom: 2px solid lightgrey;
+}
+
+.restaurant-address {
+  font-size: 1.5rem;
+  line-height: 10px;
+}
+
+.restaurant-address-2 {
+  line-height: 10px;
+  margin-bottom: 30px;
 }
 
 .restaurant-phone {
-  font-family: 'Courier New', Courier, monospace
+  font-family: 'Rock Salt', cursive;
+  font-size: 12px;
+}
+
+.card:hover {
+  width: 100%;
 }
 
 .card:hover .restaurant-title {
@@ -94,7 +115,6 @@
 }
 
 .card:hover .restaurant-description {
-  width: 100%;
   color: indianred;
   cursor: pointer;
 }
@@ -148,9 +168,9 @@ input[type=text]:focus {
 .footer {
   display: flex;
   align-items: center;
-  min-height: 65px;;
+  min-height: 75px;;
   height: auto;
-  background-color: linen;
+  background-color: antiquewhite;
   color: rgb(66, 66, 66);
   font-family: 'Permanent Marker', cursive;
   opacity: 0.8;

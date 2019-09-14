@@ -2,14 +2,14 @@ import React, {Component} from 'react';
 
 class Item extends Component {
     render() {
-        let places = this.props.rest.location;
-        console.log(places);
-        
 
+        console.log(this.props.rest.location.city);
+        
+    
         return (
             <div>
                 <div className="card-container">
-                    <a href={this.props.rest.url} className="card-link">
+                    <a href={this.props.rest.url} target="blank" className="card-link">
                         <div className="card" data-aos="fade-left">
                             <img src={this.props.rest.image_url} alt="" className="restaurant-image"/>
                             <div className="restaurant-content">
@@ -17,11 +17,13 @@ class Item extends Component {
                                     <h1>{this.props.rest.name}</h1>
                                 </div>
                                 <div className="restaurant-description">
-                                    <h2 className="restaurant-phone">
+                                    <div class="restaurant-address-container">
+                                        <h2 className="restaurant-address">{this.props.rest.location.display_address[0]}</h2>
+                                        <h2 className="restaurant-address-2">{this.props.rest.location.display_address[1]}</h2>
+                                    </div>
+                                    <h3 className="restaurant-phone">
                                         Phone: {this.props.rest.display_phone}
-                                    </h2>
-                                    <h3 className="restaurant-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias commodi blanditiis magni aperiam accusamus quod quasi, laudantium modi quibusdam alias magnam. Vero sit, voluptatibus harum dolorum hic iusto ea unde!</h3>
-                                    
+                                    </h3>
                                 </div>
                             </div>
                         </div>
