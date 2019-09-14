@@ -125,6 +125,7 @@
 .card:hover .restaurant-description {
   /* color: indianred; */
   cursor: pointer;
+  color: indianred;
   border-left-color: darkseagreen;
   border-right-color: darkseagreen;
 }
