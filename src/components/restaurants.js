@@ -105,20 +105,29 @@ class Restaurants extends Component {
 
   render() {
     return (
-      <div className="content">
-        <form onSubmit={this.handleSubmit} className="form">
-          <div><h1 className="search-label">Find Tacos Near You</h1>
-          <input type="text" placeholder='City, State' onChange={this.handleInputChange}/>
+      <div class="all-content">
+        <div className="left-content">
+          <div class="form-container">
+            <form onSubmit={this.handleSubmit} className="form">
+              <div>
+                <h1 className="search-label">Find Tacos Near You</h1>
+                <input type="text" placeholder='City, State' onChange={this.handleInputChange}/>
+              </div>
+            </form>
           </div>
-        </form>
-        <div className="restaurants">
+          <div className="restaurants">
             <div className="restaurants-content">
               {this.state.restaurants.map((rest, key) => 
                 <Item rest={rest} key={key} />
               )}
             </div>
+          </div>
         </div>
-        <div id="mapid"></div>
+        <div className="right-content">
+          <div className="map-container">
+            <div id="mapid"></div>
+          </div>
+        </div>
       </div>
     )
   };

@@ -61,6 +61,7 @@
 }
 
 .restaurant-content {
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -144,12 +145,12 @@
   display: flex;
   margin: 0 auto;
   justify-content: center;
-  width: 90%;
+  width: 100%;
   grid-template-columns: 1fr 1fr;
   grid-gap: 3rem;
   /* background: #f1f1f1; */
   margin-top: 2rem;
-  padding: 30px;
+  padding: 10px;
   align-items: center;
   text-decoration: none;
 }
@@ -158,7 +159,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 55%;
+  width: 75%;
   text-decoration: none;
 }
 
@@ -195,7 +196,6 @@ input[type=text]:focus {
   color: indianred;
   font-family: 'Rock Salt', cursive;
   opacity: 0.8;
-  margin-top: 50px;
 }
 
 .footer-icon {
@@ -214,34 +214,10 @@ input[type=text]:focus {
   margin-bottom: 7px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-@media (max-width: 900px) {
-  .card {
-    display: block;
-    min-width: 300px;
-  }
-  .restaurant-image {
-    height: 230px;
-    border-radius: 5px;
-  }
-}
 
 .restaurants-content {
   max-width: 100%;
-}
-
-@media (max-width: 600px) {
-  .nav-links {
-    display: none;
-  }
 }
 
 .item {
@@ -250,8 +226,63 @@ input[type=text]:focus {
   align-items: center;
   max-width: 100%;
 }
+.map-container {
+  display: flex;
+  justify-content: center;
+  height: 87vh;
+  width: 90%;
+  position: sticky;
+  top: 12vh;
+
+}
 
 #mapid {
-  height: 350px;
-  width: 350px;
+  height: 95%;
+  width: 90%;
+  z-index: 0;
+  border: solid 7px darkseagreen;
+  border-radius: 5px;
+  box-shadow: 5px 5px rgb(165, 6, 6);
+}
+
+.all-content {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+}
+
+.right-content {
+  position: relative;
+  background-color: indianred;
+  display: flex;
+  justify-content: center;
+}
+
+.left-content {
+  margin-bottom: 50px;
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .all-content {
+    display: block;
+  }
+  .map-container {
+    padding: 40px;
+  }
+  .card {
+    display: block;
+    min-width: 300px;
+  }
+  .card-link {
+    width: 50%;
+  }
+  .restaurant-image {
+    height: 230px;
+    border-radius: 5px;
+  }
 }
