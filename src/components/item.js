@@ -1,23 +1,21 @@
 import React, {Component} from 'react';
 
 class Item extends Component {
-    render() {
-
-        console.log(this.props.rest.location.city);
-        
     
+    render() {
+        console.log(this.props.rest.location.city);
         return (
-            <div>
+            <div className="item">
                 <div className="card-container">
                     <a href={this.props.rest.url} target="blank" className="card-link">
-                        <div className="card" data-aos="fade-left">
+                        <div className="card" data-aos="zoom-in">
                             <img src={this.props.rest.image_url} alt="" className="restaurant-image"/>
                             <div className="restaurant-content">
                                 <div className="restaurant-title">
                                     <h1>{this.props.rest.name}</h1>
                                 </div>
                                 <div className="restaurant-description">
-                                    <div class="restaurant-address-container">
+                                    <div className="restaurant-address-container">
                                         <h2 className="restaurant-address">{this.props.rest.location.display_address[0]}</h2>
                                         <h2 className="restaurant-address-2">{this.props.rest.location.display_address[1]}</h2>
                                         {/* <h2 className="restaurant-address-2">{this.props.rest.location.display_address[2]}</h2> */}
