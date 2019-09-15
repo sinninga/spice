@@ -8,6 +8,8 @@ const yelp_key='FPGJ2LPgJpxCoAN1CnIaBMNMqHRUjRXsHFdRjd85XtPcR_cW3iIaC6JVcYmBu7pV
 let location = 'loveland';
 let term = "tacos";
 let limit = 7;
+let long = [];
+let lat = [];
 
 const config = {
   headers: {
@@ -35,7 +37,9 @@ class Restaurants extends Component {
       restaurants: [],
       location: location,
       term: term,
-      limit: limit
+      limit: limit,
+      lat: lat,
+      long: long
     };
   }
     
@@ -45,6 +49,13 @@ class Restaurants extends Component {
     const response = await fetch(url, config);
     const data = await response.json();
     this.setState({ restaurants: data.businesses });
+    // console.log(data.businesses);
+    for(var i in data.businesses) {
+      long.push(data.businesses[i].coordinates.longitude)
+    }
+    for(var x in data.businesses) {
+      lat.push(data.businesses[x].coordinates.latitude)
+    }
     // .then(response => console.log(response.data.businesses[0].name))
     // .then(response => console.log(response.data.businesses));
     // const results = response.data
@@ -53,13 +64,25 @@ class Restaurants extends Component {
   }
 
   handleInputChange = (event) => {
+    lat = [];
+    long = [];
     // event.preventDefault()
     axios.get(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${event.target.value}&term=${this.state.term}&limit=${this.state.limit}`, config)
-  .then((response) => {
-    // console.log(response.data.businesses);
-    this.setState({
-      restaurants: response.data.businesses
-    })
+    .then((response) => {
+      // console.log(response.data.businesses);
+      this.setState({
+        restaurants: response.data.businesses
+      })
+      for(var i in response.data.businesses) {
+        long.push(response.data.businesses[i].coordinates.longitude);
+        this.setState({ long: long});
+      }
+      for(var x in response.data.businesses) {
+        lat.push(response.data.businesses[x].coordinates.latitude);
+        this.setState({ lat: lat});
+      }
+      console.log(this.state.long);
+      console.log(this.state.lat);
     // this.setState({ restaurants: response.data.businesses })
   })
   .catch(function (error) {
@@ -87,6 +110,7 @@ class Restaurants extends Component {
               )}
             </div>
         </div>
+        <div className="test"><h1>{console.log(this.state.lat[0])}</h1></div>
       </div>
     )
   };
