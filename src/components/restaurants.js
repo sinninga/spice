@@ -11,6 +11,7 @@ let term = "tacos";
 let limit = 7;
 let long = [];
 let lat = [];
+let mymap = '';
 
 const config = {
   headers: {
@@ -31,6 +32,7 @@ const config = {
 class Restaurants extends Component {
   constructor(props) {
     super(props);
+
     
     this.handleInputChange = this.handleInputChange.bind(this);
 
@@ -59,19 +61,23 @@ class Restaurants extends Component {
       lat.push(data.businesses[x].coordinates.latitude)
     }
     // .then(response => console.log(response.data.businesses[0].name))
-    var mymap = L.map('mapid').setView([lat[0], long[0]], 13);
+    mymap = L.map('mapid').setView([lat[0], long[0]], 13);
     const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
     const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     const tiles = L.tileLayer(tileUrl, { attribution });
     tiles.addTo(mymap);
-    L.marker([lat[0], long[0]]).addTo(mymap);
+    
+    for(var i in data.businesses) {
+    L.marker([lat[i], long[i]]).addTo(mymap);
+    }
     // .then(response => console.log(response.data.businesses));
     // const results = response.data
     // console.log(data.businesses);
     // console.log();
   }
-
+  
   handleInputChange = (event) => {
+    mymap.remove();
     lat = [];
     long = [];
     // event.preventDefault()
@@ -89,14 +95,17 @@ class Restaurants extends Component {
         lat.push(response.data.businesses[x].coordinates.latitude);
         this.setState({ lat: lat});
       }
-      console.log(this.state.long);
-      console.log(this.state.lat);
+      mymap = L.map('mapid').setView([lat[0], long[0]], 13);const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+      const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+      const tiles = L.tileLayer(tileUrl, { attribution });
+      tiles.addTo(mymap);
+      console.log(mymap);
     // this.setState({ restaurants: response.data.businesses })
   })
   .catch(function (error) {
     console.log(error);
   });
-    // this.setState({
+  // this.setState({
     //   location: event.target.value
     // });
     // console.log(this.state.location);
@@ -105,9 +114,9 @@ class Restaurants extends Component {
 
   render() {
     return (
-      <div class="all-content">
+      <div className="all-content">
         <div className="left-content">
-          <div class="form-container">
+          <div className="form-container">
             <form onSubmit={this.handleSubmit} className="form">
               <div>
                 <h1 className="search-label">Find Tacos Near You</h1>
