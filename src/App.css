@@ -4,7 +4,7 @@
 
 .navbar {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   min-height: 10vh;
   background: indianred;
@@ -31,9 +31,11 @@
 }
 
 .nav-links {
-  width: 20%;
+  margin-right: 50px;
+  font-family: 'Rock Salt', cursive;
+  font-size: 14px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   list-style: none;
 }
@@ -242,7 +244,7 @@ input[type=text]:focus {
   z-index: 0;
   border: solid 7px darkseagreen;
   border-radius: 5px;
-  box-shadow: 5px 5px rgb(165, 6, 6);
+  box-shadow: 5px 5px rgb(180, 78, 78);
 }
 
 .all-content {
@@ -255,6 +257,7 @@ input[type=text]:focus {
   background-color: indianred;
   display: flex;
   justify-content: center;
+  opacity: 0.98;
 }
 
 .left-content {
