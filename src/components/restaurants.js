@@ -8,7 +8,7 @@ const yelp_key='FPGJ2LPgJpxCoAN1CnIaBMNMqHRUjRXsHFdRjd85XtPcR_cW3iIaC6JVcYmBu7pV
 
 let location = 'loveland';
 let term = "tacos";
-let limit = 7;
+let limit = 10;
 let long = [];
 let lat = [];
 let mymap = '';
@@ -67,8 +67,13 @@ class Restaurants extends Component {
     const tiles = L.tileLayer(tileUrl, { attribution });
     tiles.addTo(mymap);
     
-    for(var i in data.businesses) {
-    L.marker([lat[i], long[i]]).addTo(mymap);
+    const chiliIcon = L.icon({
+      iconUrl:  'https://cdn4.iconfinder.com/data/icons/filled-vegetables-colored/4096/Chili_pepper_2-512.png',
+      iconSize: [50, 50]
+    });
+
+    for(var y in data.businesses) {
+    L.marker([lat[y], long[y]], { icon: chiliIcon}).addTo(mymap);
     }
     // .then(response => console.log(response.data.businesses));
     // const results = response.data
@@ -77,12 +82,12 @@ class Restaurants extends Component {
   }
   
   handleInputChange = (event) => {
-    mymap.remove();
-    lat = [];
-    long = [];
     // event.preventDefault()
     axios.get(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${event.target.value}&term=${this.state.term}&limit=${this.state.limit}`, config)
     .then((response) => {
+      mymap.remove();
+      lat = [];
+      long = [];
       // console.log(response.data.businesses);
       this.setState({
         restaurants: response.data.businesses
@@ -100,6 +105,13 @@ class Restaurants extends Component {
       const tiles = L.tileLayer(tileUrl, { attribution });
       tiles.addTo(mymap);
       console.log(mymap);
+      const chiliIcon = L.icon({
+        iconUrl:  'https://cdn4.iconfinder.com/data/icons/filled-vegetables-colored/4096/Chili_pepper_2-512.png',
+        iconSize: [50, 50]
+      });
+      for(var a in response.data.businesses) {
+        L.marker([lat[a], long[a]], { icon: chiliIcon }).addTo(mymap);
+        }
     // this.setState({ restaurants: response.data.businesses })
   })
   .catch(function (error) {
@@ -119,8 +131,8 @@ class Restaurants extends Component {
           <div className="form-container">
             <form onSubmit={this.handleSubmit} className="form">
               <div>
-                <h1 className="search-label">Find Tacos Near You</h1>
-                <input type="text" placeholder='City, State' onChange={this.handleInputChange}/>
+                <h1 className="search-label">Find Spicy Food Near You</h1>
+                <input id='form-input' type="text" placeholder='City, State' onChange={this.handleInputChange}/>
               </div>
             </form>
           </div>
