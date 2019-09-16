@@ -8,7 +8,7 @@ const yelp_key='FPGJ2LPgJpxCoAN1CnIaBMNMqHRUjRXsHFdRjd85XtPcR_cW3iIaC6JVcYmBu7pV
 
 let location = 'loveland';
 let term = "tacos";
-let limit = 10;
+let limit = 7;
 let long = [];
 let lat = [];
 let mymap = '';

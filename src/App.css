@@ -192,18 +192,18 @@ input[type=text]:focus {
 .footer {
   display: flex;
   align-items: center;
+  justify-content: center;
   min-height: 75px;;
   height: auto;
-  background-color: antiquewhite;
-  color: indianred;
+  background-color: darkseagreen;
+  color: whitesmoke;
   font-family: 'Rock Salt', cursive;
-  opacity: 0.8;
 }
 
 .footer-icon {
   height: 15px;
   width: 15px;
-  background-color: linen;
+  background-color: darkseagreen;
   border-radius: 50px;
   margin-left: 10px;
 }
@@ -235,16 +235,18 @@ input[type=text]:focus {
   width: 90%;
   position: sticky;
   top: 12vh;
-
+  border-left: dotted 18px whitesmoke;
+  border-right: dotted 18px whitesmoke;
+  margin: 18px;
 }
 
 #mapid {
-  height: 95%;
+  height: 98.6%;
   width: 90%;
   z-index: 0;
-  border: solid 7px darkseagreen;
+  border: solid 5px indianred;
   border-radius: 5px;
-  box-shadow: 5px 5px rgb(180, 78, 78);
+  /* box-shadow: 5px 5px rgb(180, 78, 78); */
 }
 
 .all-content {
@@ -254,14 +256,16 @@ input[type=text]:focus {
 
 .right-content {
   position: relative;
-  background-color: indianred;
+  background-color: darkseagreen;
   display: flex;
   justify-content: center;
-  opacity: 0.98;
 }
 
 .left-content {
   margin-bottom: 50px;
+  margin: 18px;
+  border-right: 18px dotted darkseagreen;
+  border-left: 18px dotted darkseagreen;
 }
 
 @media (max-width: 600px) {
