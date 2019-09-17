@@ -73,7 +73,7 @@ class Restaurants extends Component {
     });
 
     for(var y in data.businesses) {
-    L.marker([lat[y], long[y]], { icon: chiliIcon}).addTo(mymap);
+    L.marker([lat[y], long[y]], { icon: chiliIcon, title: this.state.restaurants[y].name }).addTo(mymap);
     }
     // .then(response => console.log(response.data.businesses));
     // const results = response.data
@@ -85,6 +85,7 @@ class Restaurants extends Component {
     // event.preventDefault()
     axios.get(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${event.target.value}&term=${this.state.term}&limit=${this.state.limit}`, config)
     .then((response) => {
+      setTimeout(() => {
       mymap.remove();
       lat = [];
       long = [];
@@ -110,10 +111,10 @@ class Restaurants extends Component {
         iconSize: [50, 50]
       });
       for(var a in response.data.businesses) {
-        L.marker([lat[a], long[a]], { icon: chiliIcon }).addTo(mymap);
+        L.marker([lat[a], long[a]], { icon: chiliIcon, title: this.state.restaurants[a].name  }).addTo(mymap);
         }
     // this.setState({ restaurants: response.data.businesses })
-  })
+    }, 1000)})
   .catch(function (error) {
     console.log(error);
   });
