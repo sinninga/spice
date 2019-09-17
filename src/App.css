@@ -272,6 +272,10 @@ input[type=text]:focus {
   .nav-links {
     display: none;
   }
+  .left-content {
+    border-right: none;
+    border-left: none;
+  }
 }
 
 @media (max-width: 1000px) {

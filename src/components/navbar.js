@@ -20,9 +20,6 @@ function Navbar() {
         <Link style={navStyle} to='/recipes'>
           <li>Recipes</li>
         </Link>
-        <Link style={navStyle} to='/info'>
-          <li>Info</li>
-        </Link>
       </ul>
     </nav>
   );

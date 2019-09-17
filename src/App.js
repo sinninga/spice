@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/navbar';
-import Info from './components/info';
 import Recipes from './components/recipes';
 import Restaurants from './components/restaurants';
 import Footer from './components/footer';
@@ -15,7 +14,6 @@ function App() {
         <Navbar />
         <Route path="/" exact component={Restaurants} />
         <Route path="/recipes" component={Recipes} />
-        <Route path="/info" component={Info} />
         <Footer />
       </div>
     </Router>
