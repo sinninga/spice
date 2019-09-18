@@ -7,7 +7,7 @@ const yelp_key='FPGJ2LPgJpxCoAN1CnIaBMNMqHRUjRXsHFdRjd85XtPcR_cW3iIaC6JVcYmBu7pV
 // const url = 'GET https://api.yelp.com/v3/businesses/search';
 
 let location = 'loveland';
-let term = "Mexican";
+let term = "";
 let limit = 5;
 let long = [];
 let lat = [];
@@ -154,7 +154,7 @@ class Restaurants extends Component {
           <div className="form-container">
             <form onSubmit={this.handleSubmit} className="form">
               <div>
-                <h1 className="search-label">Find Spicy {this.state.term} Food Near You</h1>
+                <h1 className="search-label">Find Spicy <em className="food-word">{this.state.term}</em>  Food Near You</h1>
                 <input id='form-input' type="text" placeholder='City, State' onChange={this.handleInputChange}/>
               </div>
             </form>

@@ -198,6 +198,7 @@ input[type=text]:focus {
   border-radius: 8px;
   border: none;
   box-shadow: 2px 2px lightgrey;
+  font-weight: 900;
 }
 
 .food-button:hover {
@@ -207,11 +208,18 @@ input[type=text]:focus {
   border: solid 3px indianred;
 }
 
+.food-word {
+  color: indianred;
+  font-family: 'Rock Salt', cursive;
+  margin-right: 5px;
+}
+
 .food-button:focus {
   background-color: darkseagreen;
   color: whitesmoke;
   cursor: pointer;
   border: none;
+  outline: none;
 }
 
 .food-button:focus {
