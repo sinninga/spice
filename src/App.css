@@ -185,6 +185,42 @@ input[type=text]:focus {
   cursor: auto;
 }
 
+.food-buttons-container {
+  margin-top: 25px;
+}
+
+.food-button {
+  height: 2.5rem;
+  width: 8rem;
+  background-color: indianred;
+  color: whitesmoke;
+  margin: 2px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 2px 2px lightgrey;
+}
+
+.food-button:hover {
+  background-color: whitesmoke;
+  color: indianred;
+  cursor: pointer;
+  border: solid 3px indianred;
+}
+
+.food-button:focus {
+  background-color: darkseagreen;
+  color: whitesmoke;
+  cursor: pointer;
+  border: none;
+}
+
+.food-button:focus {
+  background-color: darkseagreen;
+  color: whitesmoke;
+  cursor: pointer;
+  border: none;
+}
+
 .search-label {
   color: slategray;
 }

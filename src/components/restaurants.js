@@ -7,7 +7,7 @@ const yelp_key='FPGJ2LPgJpxCoAN1CnIaBMNMqHRUjRXsHFdRjd85XtPcR_cW3iIaC6JVcYmBu7pV
 // const url = 'GET https://api.yelp.com/v3/businesses/search';
 
 let location = 'loveland';
-let term = "tacos";
+let term = "Mexican";
 let limit = 5;
 let long = [];
 let lat = [];
@@ -35,6 +35,7 @@ class Restaurants extends Component {
 
     
     this.handleInputChange = this.handleInputChange.bind(this);
+    // this.changeFoodType = this.changeFoodType.bind(this);
 
     this.state = {
       restaurants: [],
@@ -124,7 +125,28 @@ class Restaurants extends Component {
     // console.log(this.state.location);
     // console.log(this.state.restaurants)
   }
+  
+  changeFoodTypeMexican = () => {
+    this.setState({term: "Mexican"})
+    console.log(term);
+  };
 
+  changeFoodTypeIndian = () => {
+    this.setState({term: "Indian"})
+    console.log(term);
+  };
+
+  changeFoodTypeThai = () => {
+    this.setState({term: "Thai"})
+    console.log(term);
+  };
+
+  changeFoodTypeChinese = () => {
+    this.setState({term: "Chinese"})
+    console.log(term);
+  };
+
+  
   render() {
     return (
       <div className="all-content">
@@ -132,10 +154,16 @@ class Restaurants extends Component {
           <div className="form-container">
             <form onSubmit={this.handleSubmit} className="form">
               <div>
-                <h1 className="search-label">Find Spicy Food Near You</h1>
+                <h1 className="search-label">Find Spicy {this.state.term} Food Near You</h1>
                 <input id='form-input' type="text" placeholder='City, State' onChange={this.handleInputChange}/>
               </div>
             </form>
+          </div>
+          <div className="food-buttons-container">
+            <button onClick={this.changeFoodTypeMexican} className="food-button">Mexican</button>
+            <button onClick={this.changeFoodTypeIndian} className="food-button">Indian</button>
+            <button onClick={this.changeFoodTypeThai} className="food-button">Thai</button>
+            <button onClick={this.changeFoodTypeChinese} className="food-button">Chinese</button>
           </div>
           <div className="restaurants">
             <div className="restaurants-content">
