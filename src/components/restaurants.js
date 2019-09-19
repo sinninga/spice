@@ -134,6 +134,10 @@ class Restaurants extends Component {
     // console.log(this.state.location);
     // console.log(this.state.restaurants)
   }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+  }
   
   changeFoodTypeTacos = () => {
     let tacos = document.querySelector(".food-word");
