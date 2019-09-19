@@ -44,7 +44,6 @@
   margin: 9px;
 }
 
-
 .card {
   display: grid;
   min-width: 200px;
@@ -89,6 +88,7 @@
 
 .restaurant-title h1 {
   padding: 5px;
+  text-decoration: underline;
 }
 
 .restaurant-description {
@@ -121,12 +121,15 @@
 }
 
 .restaurant-phone {
-  font-family: 'Rock Salt', cursive;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .card:hover {
   width: 100%;
+}
+
+.card:hover .restaurant-image {
+  opacity: 0.8;
 }
 
 .card:hover .restaurant-title {
@@ -161,7 +164,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 75%;
+  width: 90%;
   text-decoration: none;
 }
 
@@ -170,7 +173,7 @@ input[type=text] {
   margin-top: 10px;
   width: 260px;
   height: 50px;
-  border: 5px solid darkseagreen;
+  border: 5px solid lightslategray;
   border-radius: 5px;
   padding: 5px;
 }
@@ -190,22 +193,23 @@ input[type=text]:focus {
 }
 
 .food-button {
-  height: 2.5rem;
-  width: 8rem;
-  background-color: indianred;
-  color: whitesmoke;
+  height: 3rem;
+  width: 10rem;
+  background-color: whitesmoke;
+  color: indianred;
   margin: 2px;
   border-radius: 8px;
   border: none;
   box-shadow: 2px 2px lightgrey;
   font-weight: 900;
+  font-size: 1rem;
+  border: solid 3px indianred;
 }
 
 .food-button:hover {
-  background-color: whitesmoke;
-  color: indianred;
+  background-color: indianred;
+  color: whitesmoke;
   cursor: pointer;
-  border: solid 3px indianred;
 }
 
 .food-word {
@@ -214,23 +218,53 @@ input[type=text]:focus {
   margin-right: 5px;
 }
 
+.tacos {
+  color: indianred;
+}
+
+.beer {
+  color: #f7bc1f;
+}
+
 .food-button:focus {
-  background-color: darkseagreen;
+  background-color: indianred;
   color: whitesmoke;
   cursor: pointer;
   border: none;
   outline: none;
 }
 
-.food-button:focus {
-  background-color: darkseagreen;
+.beer-button {
+  height: 3rem;
+  width: 10rem;
+  background-color: whitesmoke;
+  color: #f7bc1f;
+  margin: 2px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 2px 2px lightgrey;
+  font-weight: 900;
+  font-size: 1rem;
+  border: solid 3px #f7bc1f;
+}
+
+.beer-button:hover {
+  background-color: #f7bc1f;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.beer-button:focus {
+  background-color: #f7bc1f;
   color: whitesmoke;
   cursor: pointer;
   border: none;
+  outline: none;
 }
 
 .search-label {
   color: slategray;
+  margin: 0;
 }
 
 .footer {
@@ -275,20 +309,21 @@ input[type=text]:focus {
 .map-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 87vh;
   width: 90%;
   position: sticky;
   top: 12vh;
-  border-left: dotted 18px whitesmoke;
-  border-right: dotted 18px whitesmoke;
+  /* border-left: dotted 18px whitesmoke;
+  border-right: dotted 18px whitesmoke; */
   margin: 18px;
 }
 
 #mapid {
-  height: 98.6%;
-  width: 90%;
+  height: 90%;
+  width: 99%;
   z-index: 0;
-  border: solid 5px indianred;
+  border: solid 4px darkseagreen;
   border-radius: 5px;
   /* box-shadow: 5px 5px rgb(180, 78, 78); */
 }
@@ -300,7 +335,7 @@ input[type=text]:focus {
 
 .right-content {
   position: relative;
-  background-color: darkseagreen;
+  /* background-color: darkseagreen; */
   display: flex;
   justify-content: center;
 }
