@@ -7,7 +7,7 @@ const yelp_key='FPGJ2LPgJpxCoAN1CnIaBMNMqHRUjRXsHFdRjd85XtPcR_cW3iIaC6JVcYmBu7pV
 // const url = 'GET https://api.yelp.com/v3/businesses/search';
 
 let location = 'loveland';
-let term = "";
+let term = "Spicy";
 let limit = 5;
 let long = [];
 let lat = [];
@@ -106,7 +106,7 @@ class Restaurants extends Component {
       const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
       const tiles = L.tileLayer(tileUrl, { attribution });
       tiles.addTo(mymap);
-      console.log(mymap);
+      console.log(lat);
       const chiliIcon = L.icon({
         iconUrl:  'https://cdn4.iconfinder.com/data/icons/filled-vegetables-colored/4096/Chili_pepper_2-512.png',
         iconSize: [50, 50]
