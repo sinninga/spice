@@ -7,7 +7,7 @@ const yelp_key='FPGJ2LPgJpxCoAN1CnIaBMNMqHRUjRXsHFdRjd85XtPcR_cW3iIaC6JVcYmBu7pV
 // const url = 'GET https://api.yelp.com/v3/businesses/search';
 
 let location = 'loveland';
-let term = "indian";
+let term = "mexican";
 let limit = 2;
 let long = [];
 let lat = [];
@@ -69,7 +69,7 @@ class Restaurants extends Component {
     tiles.addTo(mymap);
     
     const chiliIcon = L.icon({
-      iconUrl:  'https://cdn4.iconfinder.com/data/icons/filled-vegetables-colored/4096/Chili_pepper_2-512.png',
+      iconUrl:  'https://cdn.countryflags.com/thumbs/mexico/flag-3d-round-250.png',
       iconSize: [50, 50]
     });
 
@@ -123,14 +123,14 @@ class Restaurants extends Component {
       tiles.addTo(mymap);
       console.log(lat);
       const chiliIcon = L.icon({
-        iconUrl:  'https://cdn4.iconfinder.com/data/icons/filled-vegetables-colored/4096/Chili_pepper_2-512.png',
+        iconUrl:  "mexico.png",
         iconSize: [50, 50]
       });
       const beerIcon = L.icon({
         iconUrl:  'https://thumbs.gfycat.com/PlainVapidGalah-small.gif',
         iconSize: [50, 50]
       });
-      if(this.state.term === "tacos") {
+      if(this.state.term === "mexican") {
       for(var a in response.data.businesses) {
         L.marker([lat[a], long[a]], { icon: chiliIcon, title: this.state.restaurants[a].name  }).addTo(mymap);
         }} else {
@@ -154,19 +154,37 @@ class Restaurants extends Component {
     e.preventDefault();
   }
   
-  changeFoodTypeTacos = () => {
-    let tacos = document.querySelector(".food-word");
-    tacos.classList.remove("beer");
-    tacos.classList.add("tacos")
-    this.setState({term: "tacos"})
-    console.log(term);
+  // changeFoodTypeTacos = () => {
+  //   let tacos = document.querySelector(".food-word");
+  //   tacos.classList.remove("beer");
+  //   tacos.classList.add("tacos")
+  //   this.setState({term: "tacos"})
+  //   console.log(term);
+  // };
+
+  changeFoodTypeMexican = () => {
+    let mexican = document.querySelector(".food-word");
+    this.setState({term: "mexican"})
   };
 
-  changeFoodTypeBeer = () => {
-    let beer = document.querySelector(".food-word");
-    beer.classList.add("beer");
-    this.setState({term: "Beer"})
-    console.log(term);
+  changeFoodTypeIndian = () => {
+    let indian = document.querySelector(".food-word");
+    this.setState({term: "indian"})
+  };
+
+  changeFoodTypeChinese = () => {
+    let chinese = document.querySelector(".food-word");
+    this.setState({term: "chinese"})
+  };
+
+  changeFoodTypeThai = () => {
+    let thai = document.querySelector(".food-word");
+    this.setState({term: "thai"})
+  };
+
+  changeFoodTypeVietnamese = () => {
+    let vietnamese = document.querySelector(".food-word");
+    this.setState({term: "vietnamese"})
   };
   
   render() {
@@ -176,14 +194,17 @@ class Restaurants extends Component {
           <div className="form-container">
             <form onSubmit={this.handleSubmit} className="form">
               <div>
-                <h1 className="search-label">Find Delicious <em className="food-word">{this.state.term}</em>    Near Me</h1>
+                <h1 className="search-label">Find Spicy <em className="food-word">{this.state.term}</em>   Food Near Me</h1>
                 <input id='form-input' type="text" placeholder='City, State' onChange={this.handleInputChange}/>
               </div>
             </form>
           </div>
           <div className="food-buttons-container">
-            <button onClick={this.changeFoodTypeTacos} className="food-button">Tacos</button>
-            <button onClick={this.changeFoodTypeBeer} className="beer-button">Beer</button>
+            <button onClick={this.changeFoodTypeMexican} className="food-button">Mexican</button>
+            <button onClick={this.changeFoodTypeIndian} className="food-button">Indian</button>
+            <button onClick={this.changeFoodTypeChinese} className="food-button">Chinese</button>
+            <button onClick={this.changeFoodTypeThai} className="food-button">Thai</button>
+            <button onClick={this.changeFoodTypeVietnamese} className="food-button">Vietnamese</button>
           </div>
           <div className="restaurants">
             <div className="restaurants-content">
