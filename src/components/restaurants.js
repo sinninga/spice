@@ -7,8 +7,8 @@ const yelp_key='FPGJ2LPgJpxCoAN1CnIaBMNMqHRUjRXsHFdRjd85XtPcR_cW3iIaC6JVcYmBu7pV
 // const url = 'GET https://api.yelp.com/v3/businesses/search';
 
 let location = 'loveland';
-let term = "tacos";
-let limit = 6;
+let term = "indian";
+let limit = 2;
 let long = [];
 let lat = [];
 let mymap = '';
@@ -86,10 +86,25 @@ class Restaurants extends Component {
     // event.preventDefault()
     axios.get(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${event.target.value}&term=${this.state.term}&limit=${this.state.limit}`, config)
     .then((response) => {
-      setTimeout(() => {
-      mymap.remove();
-      lat = [];
-      long = [];
+      // setTimeout(() => {
+        console.log(response.data.businesses);
+        if(response.data.businesses.length == 0) {
+          mymap.remove();
+          lat = 0;
+          long = 0;
+
+          mymap = L.map('mapid').setView([lat, long], 12);
+          const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+          const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+          const tiles = L.tileLayer(tileUrl, { attribution });
+          tiles.addTo(mymap);
+        } else {
+
+        
+        mymap.remove();
+        lat = [];
+        long = [];
+      
       // console.log(response.data.businesses);
       this.setState({
         restaurants: response.data.businesses
@@ -124,7 +139,7 @@ class Restaurants extends Component {
         }
         }
     // this.setState({ restaurants: response.data.businesses })
-    }, 1000)})
+    }})
   .catch(function (error) {
     console.log(error);
   });
