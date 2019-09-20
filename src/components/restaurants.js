@@ -8,7 +8,7 @@ const yelp_key='FPGJ2LPgJpxCoAN1CnIaBMNMqHRUjRXsHFdRjd85XtPcR_cW3iIaC6JVcYmBu7pV
 
 let location = 'loveland';
 let term = "mexican";
-let limit = 2;
+let limit = 7;
 let long = [];
 let lat = [];
 let mymap = '';
@@ -68,13 +68,13 @@ class Restaurants extends Component {
     const tiles = L.tileLayer(tileUrl, { attribution });
     tiles.addTo(mymap);
     
-    const chiliIcon = L.icon({
+    const mexicoIcon = L.icon({
       iconUrl:  'https://cdn.countryflags.com/thumbs/mexico/flag-3d-round-250.png',
       iconSize: [50, 50]
     });
 
     for(var y in data.businesses) {
-    L.marker([lat[y], long[y]], { icon: chiliIcon, title: this.state.restaurants[y].name }).addTo(mymap);
+    L.marker([lat[y], long[y]], { icon: mexicoIcon, title: this.state.restaurants[y].name }).addTo(mymap);
     }
     // .then(response => console.log(response.data.businesses));
     // const results = response.data
@@ -105,7 +105,6 @@ class Restaurants extends Component {
         lat = [];
         long = [];
       
-      // console.log(response.data.businesses);
       this.setState({
         restaurants: response.data.businesses
       })
@@ -122,23 +121,43 @@ class Restaurants extends Component {
       const tiles = L.tileLayer(tileUrl, { attribution });
       tiles.addTo(mymap);
       console.log(lat);
-      const chiliIcon = L.icon({
-        iconUrl:  "mexico.png",
+      const mexicoIcon = L.icon({
+        iconUrl:  'https://cdn.countryflags.com/thumbs/mexico/flag-3d-round-250.png',
         iconSize: [50, 50]
       });
-      const beerIcon = L.icon({
-        iconUrl:  'https://thumbs.gfycat.com/PlainVapidGalah-small.gif',
+      const indiaIcon = L.icon({
+        iconUrl:  'https://cdn.countryflags.com/thumbs/india/flag-3d-round-250.png',
+        iconSize: [50, 50]
+      });
+      const chinaIcon = L.icon({
+        iconUrl:  'https://cdn.countryflags.com/thumbs/china/flag-3d-round-250.png',
+        iconSize: [50, 50]
+      });
+      const thaiIcon = L.icon({
+        iconUrl:  'https://cdn.countryflags.com/thumbs/thailand/flag-3d-round-250.png',
+        iconSize: [50, 50]
+      });
+      const vietnamIcon = L.icon({
+        iconUrl:  'https://cdn.countryflags.com/thumbs/vietnam/flag-3d-round-250.png',
         iconSize: [50, 50]
       });
       if(this.state.term === "mexican") {
       for(var a in response.data.businesses) {
-        L.marker([lat[a], long[a]], { icon: chiliIcon, title: this.state.restaurants[a].name  }).addTo(mymap);
-        }} else {
+        L.marker([lat[a], long[a]], { icon: mexicoIcon, title: this.state.restaurants[a].name  }).addTo(mymap);
+        }} else if(this.state.term === 'indian') {
       for(var b in response.data.businesses) {
-        L.marker([lat[b], long[b]], { icon: beerIcon, title: this.state.restaurants[b].name  }).addTo(mymap);
+        L.marker([lat[b], long[b]], { icon: indiaIcon, title: this.state.restaurants[b].name  }).addTo(mymap);
+        }} else if(this.state.term === 'chinese'){
+      for(var c in response.data.businesses) {
+        L.marker([lat[c], long[c]], { icon: chinaIcon, title: this.state.restaurants[c].name  }).addTo(mymap);
+        }} else if(this.state.term === 'thai'){
+      for(var d in response.data.businesses) {
+        L.marker([lat[d], long[d]], { icon: thaiIcon, title: this.state.restaurants[d].name  }).addTo(mymap);
+        }} else if(this.state.term === 'vietnamese'){
+      for(var e in response.data.businesses) {
+        L.marker([lat[e], long[e]], { icon: vietnamIcon, title: this.state.restaurants[e].name  }).addTo(mymap);
         }
-        }
-    // this.setState({ restaurants: response.data.businesses })
+      }
     }})
   .catch(function (error) {
     console.log(error);
@@ -154,36 +173,23 @@ class Restaurants extends Component {
     e.preventDefault();
   }
   
-  // changeFoodTypeTacos = () => {
-  //   let tacos = document.querySelector(".food-word");
-  //   tacos.classList.remove("beer");
-  //   tacos.classList.add("tacos")
-  //   this.setState({term: "tacos"})
-  //   console.log(term);
-  // };
-
   changeFoodTypeMexican = () => {
-    let mexican = document.querySelector(".food-word");
     this.setState({term: "mexican"})
   };
 
   changeFoodTypeIndian = () => {
-    let indian = document.querySelector(".food-word");
     this.setState({term: "indian"})
   };
 
   changeFoodTypeChinese = () => {
-    let chinese = document.querySelector(".food-word");
     this.setState({term: "chinese"})
   };
 
   changeFoodTypeThai = () => {
-    let thai = document.querySelector(".food-word");
     this.setState({term: "thai"})
   };
 
   changeFoodTypeVietnamese = () => {
-    let vietnamese = document.querySelector(".food-word");
     this.setState({term: "vietnamese"})
   };
   
