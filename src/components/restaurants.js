@@ -6,7 +6,7 @@ import L from 'leaflet';
 const yelp_key='FPGJ2LPgJpxCoAN1CnIaBMNMqHRUjRXsHFdRjd85XtPcR_cW3iIaC6JVcYmBu7pVcjQBgcusX-pB-oAX7zR1WhR1kXbdGQ3hyOIieEQDJ0MasdBHUXvMxq8Q-KN2XXYx';
 // const url = 'GET https://api.yelp.com/v3/businesses/search';
 
-let location = 'loveland';
+let location = 'boulder';
 let term = "mexican";
 let limit = 7;
 let long = [];
