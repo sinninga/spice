@@ -3,7 +3,7 @@ import axios from 'axios';
 import Item from './item';
 import L from 'leaflet';
 
-const yelp_key='FPGJ2LPgJpxCoAN1CnIaBMNMqHRUjRXsHFdRjd85XtPcR_cW3iIaC6JVcYmBu7pVcjQBgcusX-pB-oAX7zR1WhR1kXbdGQ3hyOIieEQDJ0MasdBHUXvMxq8Q-KN2XXYx';
+const yelp_key='yJUu_hEnIDeyYg--Z-UDmcu21n51uu74UJIgaGw5JFLqdu_EEoVs0Bb38wz_b2AJGRJrym_x1xL1JFNndcV5ID-GkoTyj0IfH3u0V4IIlNTvY4w3m_9MGjYj-By7ZHYx';
 // const url = 'GET https://api.yelp.com/v3/businesses/search';
 
 let location = 'boulder';
@@ -88,7 +88,7 @@ class Restaurants extends Component {
     .then((response) => {
       // setTimeout(() => {
         console.log(response.data.businesses);
-        if(response.data.businesses.length == 0) {
+        if(response.data.businesses.length === 0) {
           mymap.remove();
           lat = 0;
           long = 0;
