@@ -4,6 +4,8 @@ This is a react application that allows users to find spicy food in any location
 
 ![Screenshot from 2023-08-05 16-46-40](https://github.com/sinninga/spice/assets/36636887/5951ea4d-aced-40c5-8216-51fd6d38a1d9)
 -
+[Screencast from 10-01-2023 08:03:04 PM.webm](https://github.com/sinninga/spice/assets/36636887/9f5664a4-f595-464d-87fd-276bcda5da2a)
+
 **Built With**
 
 [![My Skills](https://skillicons.dev/icons?i=react,js,html,css,nodejs,postman)](https://skillicons.dev)
