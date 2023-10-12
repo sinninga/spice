@@ -219,6 +219,9 @@ class Restaurants extends Component {
               )}
             </div>
           </div>
+          <div className='access-btn'>
+            <a href="https://cors-anywhere.herokuapp.com/corsdemo" className="food-button cors">Click for Temporary Access</a>
+          </div>
         </div>
         <div className="right-content">
           <div className="map-container">
