@@ -220,7 +220,7 @@ input[type=text]:focus {
   background-color: darkseagreen;
   color: white;
   border-color: darkseagreen;
-  padding: 12px;
+  padding: 15px;
   text-decoration: none;
 }
 
@@ -228,7 +228,7 @@ input[type=text]:focus {
   background-color: indianred;
   color: white;
   border-color: indianred;
-  padding: 12px;
+  padding: 15px;
   text-decoration: none;
 }
 
