@@ -1,7 +1,6 @@
 {
   "name": "spice",
   "version": "0.1.0",
-  "homepage": "https://sinninga.github.io/spice/",
   "private": true,
   "dependencies": {
     "axios": "^1.4.0",
