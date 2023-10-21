@@ -3,7 +3,7 @@ import axios from 'axios';
 import Item from './item';
 import L from 'leaflet';
 
-const yelp_key='yJUu_hEnIDeyYg--Z-UDmcu21n51uu74UJIgaGw5JFLqdu_EEoVs0Bb38wz_b2AJGRJrym_x1xL1JFNndcV5ID-GkoTyj0IfH3u0V4IIlNTvY4w3m_9MGjYj-By7ZHYx';
+const yelp_key=process.env.REACT_APP_YELP_KEY;
 // const url = 'GET https://api.yelp.com/v3/businesses/search';
 
 let location = 'boulder';
