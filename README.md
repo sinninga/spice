@@ -20,4 +20,4 @@ This is a react application that allows users to find spicy food in any location
 
 **Setup**
 
-Visit https://sinninga.github.io/spice
+Visit https://spice-five.vercel.app
