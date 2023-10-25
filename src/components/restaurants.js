@@ -53,6 +53,7 @@ class Restaurants extends Component {
     // console.log(config);
     
     const response = await axios.get(`${API_URL}?location=${this.state.location}&term=${this.state.term}&limit=${this.state.limit}`);
+    console.log(response);
     const data = await response.json();
     this.setState({ restaurants: data.businesses });
     // console.log(data.businesses);
