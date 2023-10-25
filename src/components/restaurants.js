@@ -88,6 +88,7 @@ class Restaurants extends Component {
     // event.preventDefault()
     axios.get(`${API_URL}?location=${event.target.value}&term=${this.state.term}&limit=${this.state.limit}`)
     .then((response) => {
+      console.log('API Response:', response.data);
       // setTimeout(() => {
         console.log(response.data.businesses);
         if(response.data.businesses.length === 0) {
