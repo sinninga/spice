@@ -56,7 +56,7 @@ class Restaurants extends Component {
     console.log(response);
     const data = await response.json();
     this.setState({ restaurants: data.businesses });
-    // console.log(data.businesses);
+    console.log(data.businesses);
     for(var i in data.businesses) {
       long.push(data.businesses[i].coordinates.longitude)
     }
