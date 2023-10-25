@@ -52,12 +52,8 @@ class Restaurants extends Component {
     async componentDidMount() {
     // console.log(config);
     
-    const response = await fetch(`${API_URL}?location=${this.state.location}&term=${this.state.term}&limit=${this.state.limit}`);
-    if (!response.ok) {
-      throw new Error(`Failed to fetch data from Yelp API. Status: ${response.status}`);
-    }
+    const response = await axios.get(`${API_URL}?location=${this.state.location}&term=${this.state.term}&limit=${this.state.limit}`);
     const data = await response.json();
-
     this.setState({ restaurants: data.businesses });
     // console.log(data.businesses);
     for(var i in data.businesses) {
@@ -89,15 +85,10 @@ class Restaurants extends Component {
   
   handleInputChange = (event) => {
     // event.preventDefault()
-    fetch(`${API_URL}?location=${event.target.value}&term=${this.state.term}&limit=${this.state.limit}`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Failed to fetch data from Yelp API. Status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data.businesses);
+    axios.get(`${API_URL}?location=${event.target.value}&term=${this.state.term}&limit=${this.state.limit}`)
+    .then((response) => {
+      // setTimeout(() => {
+        console.log(response.data.businesses);
         if(response.data.businesses.length === 0) {
           mymap.remove();
           lat = 0;
