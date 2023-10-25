@@ -1,4 +1,4 @@
-import fetchYelpData from '../../utils/yelpApi';
+import fetchYelpData from 'utils/yelpApi.js';
 
 export default async (req, res) => {
   if (req.method === 'GET') {
