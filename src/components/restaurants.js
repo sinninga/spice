@@ -50,8 +50,7 @@ class Restaurants extends Component {
     async componentDidMount() {
     // console.log(config);
     
-    const url = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${this.state.location}&term=${this.state.term}&limit=${this.state.limit}`;
-    const response = await fetch(url, config);
+    const url = `/api/yelp?location=${this.state.location}&term=${this.state.term}&limit=${this.state.limit}`;    const response = await fetch(url, config);
     const data = await response.json();
     this.setState({ restaurants: data.businesses });
     // console.log(data.businesses);
@@ -83,7 +82,7 @@ class Restaurants extends Component {
   
   handleInputChange = (event) => {
     // event.preventDefault()
-    axios.get(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${event.target.value}&term=${this.state.term}&limit=${this.state.limit}`, config)
+    axios.get(`/api/yelp?location=${event.target.value}&term=${this.state.term}&limit=${this.state.limit}`, config)
     .then((response) => {
       // setTimeout(() => {
         console.log(response.data.businesses);
