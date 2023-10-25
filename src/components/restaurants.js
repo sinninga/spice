@@ -80,7 +80,6 @@ class Restaurants extends Component {
     // .then(response => console.log(response.data.businesses));
     // const results = response.data
     // console.log(data.businesses);
-    // console.log();
   }
   
   handleInputChange = (event) => {
