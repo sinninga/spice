@@ -3,6 +3,8 @@ import axios from 'axios';
 import Item from './item';
 import L from 'leaflet';
 
+const API_URL = '/api/yelp';
+
 const yelp_key=process.env.REACT_APP_YELP_KEY;
 // const url = 'GET https://api.yelp.com/v3/businesses/search';
 
@@ -50,8 +52,7 @@ class Restaurants extends Component {
     async componentDidMount() {
     // console.log(config);
     
-    const url = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${this.state.location}&term=${this.state.term}&limit=${this.state.limit}`;
-    const response = await fetch(url, config);
+    const response = await axios.get(`${API_URL}?location=${this.state.location}&term=${this.state.term}&limit=${this.state.limit}`);
     const data = await response.json();
     this.setState({ restaurants: data.businesses });
     // console.log(data.businesses);
@@ -84,7 +85,7 @@ class Restaurants extends Component {
   
   handleInputChange = (event) => {
     // event.preventDefault()
-    axios.get(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${event.target.value}&term=${this.state.term}&limit=${this.state.limit}`, config)
+    axios.get(`${API_URL}?location=${event.target.value}&term=${this.state.term}&limit=${this.state.limit}`)
     .then((response) => {
       // setTimeout(() => {
         console.log(response.data.businesses);
