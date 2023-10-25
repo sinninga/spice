@@ -50,7 +50,8 @@ class Restaurants extends Component {
     async componentDidMount() {
     // console.log(config);
     
-    const url = `/api/yelp?location=${this.state.location}&term=${this.state.term}&limit=${this.state.limit}`;    const response = await fetch(url, config);
+    const url = `/api/yelp?location=${this.state.location}&term=${this.state.term}&limit=${this.state.limit}`;
+    const response = await fetch(url, config);
     const data = await response.json();
     this.setState({ restaurants: data.businesses });
     // console.log(data.businesses);
@@ -78,6 +79,7 @@ class Restaurants extends Component {
     // .then(response => console.log(response.data.businesses));
     // const results = response.data
     // console.log(data.businesses);
+    // console.log();
   }
   
   handleInputChange = (event) => {
