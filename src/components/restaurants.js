@@ -11,8 +11,8 @@ const yelp_key=process.env.REACT_APP_YELP_KEY;
 let location = 'boulder';
 let term = "mexican";
 let limit = 7;
-let long = [];
-let lat = [];
+let long = [105];
+let lat = [40];
 let mymap = '';
 
 const config = {
