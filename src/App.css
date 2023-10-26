@@ -216,22 +216,6 @@ input[type=text]:focus {
   margin: 25px;
 }
 
-.cors {
-  background-color: darkseagreen;
-  color: white;
-  border-color: darkseagreen;
-  padding: 15px;
-  text-decoration: none;
-}
-
-.cors:hover {
-  background-color: indianred;
-  color: white;
-  border-color: indianred;
-  padding: 15px;
-  text-decoration: none;
-}
-
 .food-word {
   color: indianred;
   font-family: 'Rock Salt', cursive;
