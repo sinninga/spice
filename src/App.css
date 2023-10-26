@@ -324,7 +324,7 @@ input[type=text]:focus {
 }
 
 #mapid {
-  height: 90%;
+  height: 86%;
   width: 99%;
   z-index: 0;
   border: solid 4px darkseagreen;
