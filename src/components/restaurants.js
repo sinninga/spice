@@ -56,7 +56,7 @@ class Restaurants extends Component {
       console.log(response);
     this.setState({ restaurants: response.data.businesses });
     console.log(response.data.businesses);
-    console.log(response.data.businesses[0].coordinates.long);
+    console.log(response.data.businesses[0].coordinates.longitude);
     for(var i in response.data.businesses) {
       long.push(response.data.businesses[i].coordinates.longitude)
     }
