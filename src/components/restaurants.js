@@ -75,7 +75,7 @@ class Restaurants extends Component {
       iconSize: [50, 50]
     });
 
-    for(var y in data.businesses) {
+    for(var y in response.data.businesses) {
     L.marker([lat[y], long[y]], { icon: mexicoIcon, title: this.state.restaurants[y].name }).addTo(mymap);
     }
     // .then(response => console.log(response.data.businesses));
