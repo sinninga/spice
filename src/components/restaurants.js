@@ -54,14 +54,13 @@ class Restaurants extends Component {
     
     const response = await axios.get(`${API_URL}?location=${this.state.location}&term=${this.state.term}&limit=${this.state.limit}`);
       console.log(response);
-    const data = response;
-    this.setState({ restaurants: data.data.businesses });
-    console.log(data.data.businesses);
-    for(var i in data.businesses) {
-      long.push(data.businesses[i].coordinates.longitude)
+    this.setState({ restaurants: response.data.businesses });
+    console.log(response.data.businesses);
+    for(var i in response.data.businesses) {
+      long.push(response.data.businesses[i].coordinates.longitude)
     }
-    for(var x in data.businesses) {
-      lat.push(data.businesses[x].coordinates.latitude)
+    for(var x in response.data.businesses) {
+      lat.push(response.data.businesses[x].coordinates.latitude)
     }
     // .then(response => console.log(response.data.businesses[0].name))
     mymap = L.map('mapid').setView([lat[0], long[0]], 12);
